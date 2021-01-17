@@ -1,0 +1,8 @@
+exportPattern("^[[:alpha:]]+")
+importFrom(Rdpack,reprompt)
+S3method(plot,CZ_ANOVA)
+S3method(plot,CZ_MANOVA)
+import(stats,graphics)
+importFrom("grDevices", "devAskNewPage")
+export(plot.CZ_ANOVA)
+export(plot.CZ_MANOVA)

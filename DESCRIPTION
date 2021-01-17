@@ -1,0 +1,13 @@
+Package: RJCA
+Type: Package
+Title: Convergence assessment of RJMCMC algorithms
+Version: 0.1.0
+Author: Tiago Pereira Marques and Miriam Harumi Tsunemi
+Maintainer: Tiago Pereira Marques <tiagoperma@gmail.com>
+Description: This package on version 0.1.0 has four functions to evaluate the convergence of RJMCMC outputs by using a modified version of Castelloe and Zimmerman (2002) criteria.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Imports: Rdpack
+RdMacros: Rdpack
+RoxygenNote: 7.1.1
