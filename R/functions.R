@@ -193,7 +193,7 @@ plot.CZ_MANOVA<-function(x,...){
   ylim<-c(0.99*min(V,Wc),1.01*max(V,Wc))
   layout(matrix(c(1,2),nrow=2),heights = c(1,0.1))
   par(mar=c(5.1,5.1,4.1,2.1))
-  plot(xv,V,type="l",ylim=ylim,xlab="Lote",ylab="Crit?rio",main=NULL)
+  plot(xv,V,type="l",ylim=ylim,xlab="Lote",ylab="Critério",main=NULL)
   lines(xv,Wc,lty=3)
   par(mar=c(rep(0,4)))
   plot(0,0,type="n",bty="n",xaxt="n",yaxt="n")
