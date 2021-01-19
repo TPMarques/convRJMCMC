@@ -61,6 +61,7 @@ CZ_ANOVA<-function(theta,chains,models,mcmciterations,nbatches=20,batchsize=max(
     return(result)
   })
   attr(result,"class")<-"CZ_ANOVA"
+  name(result)<-"CZ_ANOVA"
   return(result)
 }
 
@@ -122,31 +123,26 @@ CZ_MANOVA<-function(theta,chains,models,mcmciterations,nbatches=20,batchsize=max
     WmWc_eig<-max(eigen(WmWc)$values)
 
     result<-list(V,Wc,Wm,WmWc,MPSRF1,MPSRF2,V_eig,Wc_eig,Wm_eig,WmWc_eig)
-    names(result)<-c("V matrix","Wc matrix","Wm matrix","WmWc matrix",
-                     "MPSRF1","MPSRF2","V matrix largest eigenvalue",
-                     "Wc matrix largest eigenvalue",
-                     "Wm matrix largest eigenvalue",
-                     "WmWc matrix largest eigenvalue")
     return(result)
   })
   attr(result,"class")<-"CZ_MANOVA"
   return(result)
 }
 
-plot.CZ_ANOVA<-function(x,...){
+plot.CZ_ANOVA<-function(cza_obj){
   layout(matrix(c(1,2),nrow=2),heights = c(1,0.1))
   par(mar=c(5.1,5.1,4.1,2.1))
-  PSRF1<-as.vector(unlist(sapply(x,"[",4)))
-  PSRF2<-as.vector(unlist(sapply(x,"[",5)))
-  ub_PSRF1<-as.vector(unlist(sapply(x,"[",6)))
-  ub_PSRF2<-as.vector(unlist(sapply(x,"[",7)))
-  V<-as.vector(unlist(sapply(x,"[",8)))
-  Wc<-as.vector(unlist(sapply(x,"[",9)))
-  Wm<-as.vector(unlist(sapply(x,"[",10)))
-  Wcm<-as.vector(unlist(sapply(x,"[",11)))
+  PSRF1<-as.vector(unlist(sapply(cza_obj,"[",4)))
+  PSRF2<-as.vector(unlist(sapply(cza_obj,"[",5)))
+  ub_PSRF1<-as.vector(unlist(sapply(cza_obj,"[",6)))
+  ub_PSRF2<-as.vector(unlist(sapply(cza_obj,"[",7)))
+  V<-as.vector(unlist(sapply(cza_obj,"[",8)))
+  Wc<-as.vector(unlist(sapply(cza_obj,"[",9)))
+  Wm<-as.vector(unlist(sapply(cza_obj,"[",10)))
+  Wcm<-as.vector(unlist(sapply(cza_obj,"[",11)))
   ylim<-c(0.99*min(PSRF1,PSRF2),1.01*max(ub_PSRF1,ub_PSRF2))
   xv<-seq(1,length(PSRF1))
-  plot(xv,PSRF1,type="l",ylim=ylim,xlab="Lote",ylab="Critério",main=NULL)
+  plot(xv,PSRF1,type="l",ylim=ylim,xlab="Lote",ylab=paste("Crit",intToUtf8(0233),"rio",sep=""),main=NULL)
   lines(xv,PSRF2,col=2)
   lines(xv,ub_PSRF1,lty=3)
   lines(xv,ub_PSRF2,col=2,lty=3)
@@ -157,7 +153,7 @@ plot.CZ_ANOVA<-function(x,...){
   ylim<-c(0.99*min(V,Wc),1.01*max(V,Wc))
   layout(matrix(c(1,2),nrow=2),heights = c(1,0.1))
   par(mar=c(5.1,5.1,4.1,2.1))
-  plot(xv,V,type="l",ylim=ylim,xlab="Lote",ylab="Critério",main=NULL)
+  plot(xv,V,type="l",ylim=ylim,xlab="Lote",ylab=paste("Crit",intToUtf8(0233),"rio",sep=""),main=NULL)
   lines(xv,Wc,lty=3)
   par(mar=c(rep(0,4)))
   plot(0,0,type="n",bty="n",xaxt="n",yaxt="n")
@@ -166,25 +162,25 @@ plot.CZ_ANOVA<-function(x,...){
   ylim<-c(0.99*min(Wm,Wcm),1.01*max(Wm,Wcm))
   layout(matrix(c(1,2),nrow=2),heights = c(1,0.1))
   par(mar=c(5.1,5.1,4.1,2.1))
-  plot(xv,Wm,type="l",ylim=ylim,xlab="Lote",ylab="Critério",main=NULL)
+  plot(xv,Wm,type="l",ylim=ylim,xlab="Lote",ylab=paste("Crit",intToUtf8(0233),"rio",sep=""),main=NULL)
   lines(xv,Wcm,lty=3)
   par(mar=c(rep(0,4)))
   plot(0,0,type="n",bty="n",xaxt="n",yaxt="n")
   legend("center",lty=c(1,3),col = c(1,1),legend = c("Wm","WmWc"),ncol=2)
 }
 
-plot.CZ_MANOVA<-function(x,...){
+plot.CZ_MANOVA<-function(cza_obj){
   layout(matrix(c(1,2),nrow=2),heights = c(1,0.1))
   par(mar=c(5.1,5.1,4.1,2.1))
-  MPSRF1<-as.vector(unlist(sapply(x,"[",5)))
-  MPSRF2<-as.vector(unlist(sapply(x,"[",6)))
-  V<-as.vector(unlist(sapply(x,"[",7)))
-  Wc<-as.vector(unlist(sapply(x,"[",8)))
-  Wm<-as.vector(unlist(sapply(x,"[",9)))
-  Wcm<-as.vector(unlist(sapply(x,"[",10)))
+  MPSRF1<-as.vector(unlist(sapply(cza_obj,"[",5)))
+  MPSRF2<-as.vector(unlist(sapply(cza_obj,"[",6)))
+  V<-as.vector(unlist(sapply(cza_obj,"[",7)))
+  Wc<-as.vector(unlist(sapply(cza_obj,"[",8)))
+  Wm<-as.vector(unlist(sapply(cza_obj,"[",9)))
+  Wcm<-as.vector(unlist(sapply(cza_obj,"[",10)))
   ylim<-c(0.99*min(MPSRF1,MPSRF2),1.01*max(MPSRF1,MPSRF2))
   xv<-seq(1,length(MPSRF1))
-  plot(xv,MPSRF1,type="l",ylim=ylim,xlab="Lote",ylab="Critério",main=NULL)
+  plot(xv,MPSRF1,type="l",ylim=ylim,xlab="Lote",ylab=paste("Crit",intToUtf8(0233),"rio",sep=""),main=NULL)
   lines(xv,MPSRF2,col=2)
   par(mar=c(rep(0,4)))
   plot(0,0,type="n",bty="n",xaxt="n",yaxt="n")
@@ -193,7 +189,7 @@ plot.CZ_MANOVA<-function(x,...){
   ylim<-c(0.99*min(V,Wc),1.01*max(V,Wc))
   layout(matrix(c(1,2),nrow=2),heights = c(1,0.1))
   par(mar=c(5.1,5.1,4.1,2.1))
-  plot(xv,V,type="l",ylim=ylim,xlab="Lote",ylab="Critério",main=NULL)
+  plot(xv,V,type="l",ylim=ylim,xlab="Lote",ylab=paste("Crit",intToUtf8(0233),"rio",sep=""),main=NULL)
   lines(xv,Wc,lty=3)
   par(mar=c(rep(0,4)))
   plot(0,0,type="n",bty="n",xaxt="n",yaxt="n")
@@ -202,7 +198,7 @@ plot.CZ_MANOVA<-function(x,...){
   ylim<-c(0.99*min(Wm,Wcm),1.01*max(Wm,Wcm))
   layout(matrix(c(1,2),nrow=2),heights = c(1,0.1))
   par(mar=c(5.1,5.1,4.1,2.1))
-  plot(xv,Wm,type="l",ylim=ylim,xlab="Lote",ylab="Critério",main=NULL)
+  plot(xv,Wm,type="l",ylim=ylim,xlab="Lote",ylab=paste("Crit",intToUtf8(0233),"rio",sep=""),main=NULL)
   lines(xv,Wcm,lty=3)
   par(mar=c(rep(0,4)))
   plot(0,0,type="n",bty="n",xaxt="n",yaxt="n")
