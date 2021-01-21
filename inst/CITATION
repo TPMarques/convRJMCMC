@@ -1,10 +1,10 @@
 note <- sprintf("R package version %s", meta$Version)
 
 bibentry(bibtype = "Manual",
-         title = "{RJCA}: Convergence assessment of
+         title = "{convRJMCMC}: Convergence assessment of
 RJMCMC algorithms",
          author = c(person(given="Tiago", middle="Pereira", family="Marques"),
                     person(given="Miriam", middle="Harumi", family="Tsunemi")),
          year = 2021,
          note = note,
-         url = "https://github.com/TPMarques/RJCA")
+         url = "https://github.com/TPMarques/convRJMCMC")
