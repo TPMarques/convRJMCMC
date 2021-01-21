@@ -61,7 +61,7 @@ CZ_ANOVA<-function(theta,chains,models,mcmciterations,nbatches=20,batchsize=max(
     return(result)
   })
   attr(result,"class")<-"CZ_ANOVA"
-  name(result)<-"CZ_ANOVA"
+  names(result)<-"CZ_ANOVA"
   return(result)
 }
 
