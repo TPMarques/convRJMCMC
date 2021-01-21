@@ -129,17 +129,17 @@ CZ_MANOVA<-function(theta,chains,models,mcmciterations,nbatches=20,batchsize=max
   return(result)
 }
 
-plot.CZ_ANOVA<-function(cza_obj){
+plot.CZ_ANOVA<-function(x,...){
   layout(matrix(c(1,2),nrow=2),heights = c(1,0.1))
   par(mar=c(5.1,5.1,4.1,2.1))
-  PSRF1<-as.vector(unlist(sapply(cza_obj,"[",4)))
-  PSRF2<-as.vector(unlist(sapply(cza_obj,"[",5)))
-  ub_PSRF1<-as.vector(unlist(sapply(cza_obj,"[",6)))
-  ub_PSRF2<-as.vector(unlist(sapply(cza_obj,"[",7)))
-  V<-as.vector(unlist(sapply(cza_obj,"[",8)))
-  Wc<-as.vector(unlist(sapply(cza_obj,"[",9)))
-  Wm<-as.vector(unlist(sapply(cza_obj,"[",10)))
-  Wcm<-as.vector(unlist(sapply(cza_obj,"[",11)))
+  PSRF1<-as.vector(unlist(sapply(x,"[",4)))
+  PSRF2<-as.vector(unlist(sapply(x,"[",5)))
+  ub_PSRF1<-as.vector(unlist(sapply(x,"[",6)))
+  ub_PSRF2<-as.vector(unlist(sapply(x,"[",7)))
+  V<-as.vector(unlist(sapply(x,"[",8)))
+  Wc<-as.vector(unlist(sapply(x,"[",9)))
+  Wm<-as.vector(unlist(sapply(x,"[",10)))
+  Wcm<-as.vector(unlist(sapply(x,"[",11)))
   ylim<-c(0.99*min(PSRF1,PSRF2),1.01*max(ub_PSRF1,ub_PSRF2))
   xv<-seq(1,length(PSRF1))
   plot(xv,PSRF1,type="l",ylim=ylim,xlab="Lote",ylab=paste("Crit",intToUtf8(0233),"rio",sep=""),main=NULL)
@@ -169,15 +169,15 @@ plot.CZ_ANOVA<-function(cza_obj){
   legend("center",lty=c(1,3),col = c(1,1),legend = c("Wm","WmWc"),ncol=2)
 }
 
-plot.CZ_MANOVA<-function(cza_obj){
+plot.CZ_MANOVA<-function(x,...){
   layout(matrix(c(1,2),nrow=2),heights = c(1,0.1))
   par(mar=c(5.1,5.1,4.1,2.1))
-  MPSRF1<-as.vector(unlist(sapply(cza_obj,"[",5)))
-  MPSRF2<-as.vector(unlist(sapply(cza_obj,"[",6)))
-  V<-as.vector(unlist(sapply(cza_obj,"[",7)))
-  Wc<-as.vector(unlist(sapply(cza_obj,"[",8)))
-  Wm<-as.vector(unlist(sapply(cza_obj,"[",9)))
-  Wcm<-as.vector(unlist(sapply(cza_obj,"[",10)))
+  MPSRF1<-as.vector(unlist(sapply(x,"[",5)))
+  MPSRF2<-as.vector(unlist(sapply(x,"[",6)))
+  V<-as.vector(unlist(sapply(x,"[",7)))
+  Wc<-as.vector(unlist(sapply(x,"[",8)))
+  Wm<-as.vector(unlist(sapply(x,"[",9)))
+  Wcm<-as.vector(unlist(sapply(x,"[",10)))
   ylim<-c(0.99*min(MPSRF1,MPSRF2),1.01*max(MPSRF1,MPSRF2))
   xv<-seq(1,length(MPSRF1))
   plot(xv,MPSRF1,type="l",ylim=ylim,xlab="Lote",ylab=paste("Crit",intToUtf8(0233),"rio",sep=""),main=NULL)
