@@ -1,8 +1,8 @@
 \name{plot.CZ_MANOVA}
 \alias{plot.CZ_MANOVA}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{Diagnostic graphics proposed by \insertCite{CZ;textual}{RJCA} for a single parameter}
-\description{This function plots the 3 diagnostic graphics proposed by \insertCite{CZ;textual}{RJCA} for multiple parameters: 1 - MPSRF1 and MPSRF2 against batch; 2 - Largest eigenvalue of V and largest eigenvalue of Wc against batch; 3 - Largest eigenvalue of Wm and largest eigenvalue of WmWc against batch.}
+\title{Diagnostic graphics proposed by \insertCite{CZ;textual}{convRJMCMC} for a single parameter}
+\description{This function plots the 3 diagnostic graphics proposed by \insertCite{CZ;textual}{convRJMCMC} for multiple parameters: 1 - MPSRF1 and MPSRF2 against batch; 2 - Largest eigenvalue of V and largest eigenvalue of Wc against batch; 3 - Largest eigenvalue of Wm and largest eigenvalue of WmWc against batch.}
 \usage{\method{plot}{CZ_MANOVA}(x,...)}
 %- maybe also 'usage' for other objects documented here.
 \arguments{\item{x}{Object of class CZ_MANOVA created by CZ_MANOVA function.}\item{...}{Extra arguments to be parsed in the function.}}
