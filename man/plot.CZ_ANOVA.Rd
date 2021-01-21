@@ -1,7 +1,7 @@
 \name{plot.CZ_ANOVA}
 \alias{plot.CZ_ANOVA}
-\title{Diagnostic graphics proposed by \insertCite{CZ;textual}{RJCA} for a single parameter}
-\description{This function plots the 3 diagnostic graphics proposed by \insertCite{CZ;textual}{RJCA} for a single parameter: 1 - PSRF1 and PSRF2 plus their upper bounds against batch; 2 - V and Wc against batch; 3 - Wm and WmWc against batch.}
+\title{Diagnostic graphics proposed by \insertCite{CZ;textual}{convRJMCMC} for a single parameter}
+\description{This function plots the 3 diagnostic graphics proposed by \insertCite{CZ;textual}{convRJMCMC} for a single parameter: 1 - PSRF1 and PSRF2 plus their upper bounds against batch; 2 - V and Wc against batch; 3 - Wm and WmWc against batch.}
 \usage{\method{plot}{CZ_ANOVA}(x,...)}
 \arguments{\item{x}{Object of class CZ_ANOVA created by CZ_ANOVA function.}\item{...}{Extra arguments to be parsed in the function.}}
 \details{
