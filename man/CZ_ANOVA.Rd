@@ -6,7 +6,7 @@ RJMCMC convergence assessment of a single parameter
 %%  ~~function to do ... ~~
 }
 \description{
-This function creates an object of class CZ_ANOVA with the necessary information to plot the diagnostic graphics proposed by the \insertCite{CZ;textual}{RJCA} criteria for a single parameter.
+This function creates an object of class CZ_ANOVA with the necessary information to plot the diagnostic graphics proposed by the \insertCite{CZ;textual}{convRJMCMC} criteria for a single parameter.
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
@@ -41,10 +41,10 @@ CZ_ANOVA(theta,chains,models,mcmciterations,nbatches,batchsize,confidence,divisi
   }
 }
 \details{
-The function output can be different from \insertCite{CZ;textual}{RJCA} criteria in cases that at least one model is visited only for some chains as the degrees of freedom are automatically calculated by aov function. We recommend not to use the original criteria from \insertCite{CZ;textual}{RJCA} in the situation above and to use this function instead.
+The function output can be different from \insertCite{CZ;textual}{convRJMCMC} criteria in cases that at least one model is visited only for some chains as the degrees of freedom are automatically calculated by aov function. We recommend not to use the original criteria from \insertCite{CZ;textual}{convRJMCMC} in the situation above and to use this function instead.
 }
 \value{
-An object of class CZ_ANOVA which saves a list for every batch with the summary of the ANOVA 1 model, the summary of the ANOVA 2 Model, the summary of the ANOVA 3 model, PSRF1, PSRF2, the upper bound of PSRF1, the upper bound of PSRF2, V, Wc, Wm, and WcWm. For more details see \insertCite{CZ;textual}{RJCA} article.
+An object of class CZ_ANOVA which saves a list for every batch with the summary of the ANOVA 1 model, the summary of the ANOVA 2 Model, the summary of the ANOVA 3 model, PSRF1, PSRF2, the upper bound of PSRF1, the upper bound of PSRF2, V, Wc, Wm, and WcWm. For more details see \insertCite{CZ;textual}{convRJMCMC} article.
 }
 \references{
   \insertAllCited{}
