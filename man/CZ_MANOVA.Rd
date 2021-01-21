@@ -6,7 +6,7 @@
 RJMCMC convergence assessment of multiple parameters
 }
 \description{
-This function creates an object of class CZ_MANOVA with the necessary information to plot the diagnostic graphics proposed by the \insertCite{CZ;textual}{RJCA} criteria for multiple parameters.
+This function creates an object of class CZ_MANOVA with the necessary information to plot the diagnostic graphics proposed by the \insertCite{CZ;textual}{convRJMCMC} criteria for multiple parameters.
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
@@ -48,10 +48,10 @@ Matrix with parameters observations, different parameters must be on different c
 }
 }
 \details{
-The function output can be different from \insertCite{CZ;textual}{RJCA} criteria in cases that at least one model is visited only for some chains as the degrees of freedom are automatically calculated by the manova function. We recommend not to use the original criteria from \insertCite{CZ;textual}{RJCA} in the situation above and to use this function instead.
+The function output can be different from \insertCite{CZ;textual}{convRJMCMC} criteria in cases that at least one model is visited only for some chains as the degrees of freedom are automatically calculated by the manova function. We recommend not to use the original criteria from \insertCite{CZ;textual}{convRJMCMC} in the situation above and to use this function instead.
 }
 \value{
-An object of class CZ_MANOVA which saves a list for every batch with the V matrix, the Wc matrix, the Wm matrix, the WmWc matrix, MPSRF1, MPSRF2, the V matrix largest eigenvalue, the Wc matrix largest eigenvalue, the Wm matrix largest eigenvalue, and the WmWc matrix largest eigenvalue. For more details see \insertCite{CZ;textual}{RJCA} article.
+An object of class CZ_MANOVA which saves a list for every batch with the V matrix, the Wc matrix, the Wm matrix, the WmWc matrix, MPSRF1, MPSRF2, the V matrix largest eigenvalue, the Wc matrix largest eigenvalue, the Wm matrix largest eigenvalue, and the WmWc matrix largest eigenvalue. For more details see \insertCite{CZ;textual}{convRJMCMC} article.
 }
 \references{\insertAllCited{}}
 \author{Tiago Pereira Marques and Miriam Harumi Tsunemi}
