@@ -1,4 +1,4 @@
-Package: RJCA
+Package: convRJMCMC
 Type: Package
 Title: Convergence assessment of RJMCMC algorithms
 Version: 0.1.0
